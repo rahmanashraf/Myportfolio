@@ -1,0 +1,44 @@
+{% extends "admin/base.html" %} {% block content %}
+
+<div class="main">
+    <div class="container">
+        <form action="/admin/blog" method="POST" enctype="multipart/form-data">
+            <div class="form-group">
+                <label class="text-dark" for="exampleInputEmail1">Blog Title</label>
+                <input type="text" name="blog_title" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Title..">
+            </div>
+            <div class="form-group mt-3">
+                <label for="exampleInputPassword1">Blog Content</label>
+                <input type="text" name="blog_content" class="form-control" placeholder="Content..">
+            </div>
+            <div class="form-group mt-3">
+                <label for="exampleInputPassword1">Blog Img</label>
+                <input type="file" name="blog_img" class="form-control">
+            </div>
+            <button type="submit" class="btn btn-primary mt-3">Submit</button>
+            <table class="table table-dark my-4">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Link</th>
+                        <!-- <th scope="col">Update</th> -->
+                        <th scope="col">Delete</th>
+                    </tr>
+                </thead>
+                <thead>
+                    {% for blog in blogs %}
+                    <tr>
+                        <td>{{blog.id}}</td>
+                        <td>{{blog.blog_title}}</td>
+                        <td>{{blog.blog_content}}</td>
+                        <td><a href="/blogDelete/{{blog.id}}">Sil</a></td>
+                    </tr>
+                    {% endfor %}
+                </thead>
+            </table>
+        </form>
+    </div>
+</div>
+
+{% endblock %}
