@@ -22,8 +22,9 @@
                         <th scope="col">#</th>
                         <th scope="col">Name</th>
                         <th scope="col">Link</th>
-                        <!-- <th scope="col">Update</th> -->
                         <th scope="col">Delete</th>
+                        <th scope="col">Update</th>
+
                     </tr>
                 </thead>
                 <thead>
@@ -32,7 +33,12 @@
                         <td>{{blog.id}}</td>
                         <td>{{blog.blog_title}}</td>
                         <td>{{blog.blog_content}}</td>
-                        <td><a href="/blogDelete/{{blog.id}}">Sil</a></td>
+                        <td>
+                            <a href="/blogDelete/{{blog.id}}">Delete</a>
+                        </td>
+                        <td>
+                            <a href="/blogEdit/{{blog.id}}">Update</a>
+                        </td>
                     </tr>
                     {% endfor %}
                 </thead>

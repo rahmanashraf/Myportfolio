@@ -1,0 +1,16 @@
+{% extends "admin/base.html" %} {% block content %}
+
+<div class="main">
+    <div class="container">
+        <form action="/homeUpdate/{{newHome.id}}" method="POST" enctype="multipart/form-data">
+            <div class="form-group">
+                <div class="form-group mt-3 ">
+                    <label for="exampleInputPassword1 ">Blog Content</label>
+                    <input type="text " name="home_content" value="{{newHome.home_content}}" form-control placeholder="Content.. ">
+                </div>
+                <button type="submit " class="btn btn-primary mt-3 ">Submit</button>
+        </form>
+        </div>
+    </div>
+
+    {% endblock %}

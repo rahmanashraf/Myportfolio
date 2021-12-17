@@ -25,7 +25,8 @@
                     <div class="dif-color">
                     </div>
                     <div class="header-photo">
-                        <img src="../../static/images/GRREMN-removebg-preview.png" alt="">
+
+                        <img src="/static/images/IMG_7011.jpeg" alt="">
                     </div>
                 </div>
                 <div class="col-6">
@@ -33,7 +34,10 @@
 
                         <h1>RAHMAN ASHRAF</h1>
                         <h2>WEB DEVELOPER</h2>
-                        <p>Mən Azərbaycanlı veb developer namizədiyəm. Bu günə qədər hər zaman arxasıyca qaçdığım, həmişə marağında olduğum peşə məhz bu idi. İnşallah arzuladığım həyata bu yol ilə sahib olacağam.</p>
+                        {% for home in homes %}
+                        <p>{{home.home_content}}</p>
+                        {% endfor %}
+
                         <div class="test">
                             <button>Daha ətraflı...
                                 <i class="fas fa-arrow-right"></i>
@@ -110,20 +114,20 @@
     </section>
     <!-- ABOUTPAGE END -->
     <!-- MYSKILLS -->
-    <section id="experiment">
+    <section id="skills">
         <div class="container">
             <h1>MY SKILLS</h1>
             <div class="skills">
-                <ul class="skills_ul">
-                    <li class="skills_li"></li>
-                    <li class="skills_li"></li>
-                    <li class="skills_li"></li>
-                    <li class="skills_li"></li>
-                    <li class="skills_li"></li>
-                    <li class="skills_li"></li>
-                    <li class="skills_li"></li>
-                    <li class="skills_li"></li>
-                </ul>
+                <div class="skills_ul">
+                    <div class="skills_li"><span>HTML5</span><img src="/static/images/html5.png" width="100px" height="100px" alt=""></div>
+                    <div class="skills_li"><span>CSSS3</span><img src="/static/images/css3.png" width="100px" height="100px" alt=""></div>
+                    <div class="skills_li"><span>BOOTSTRAP</span><img src="/static/images/bootstrap.png" width="100px" height="100px" alt=""></div>
+                    <div class="skills_li"><span>JAVASCRIPT</span><img src="/static/images/javascript.png" width="100px" height="100px" alt=""></div>
+                    <div class="skills_li"><span>PYTHON</span><img src="/static/images/python.png" width="100px" height="100px" alt=""></div>
+                    <div class="skills_li"><span>FLASK</span><img src="/static/images/flask.png" width="100px" height="100px" alt=""></div>
+                    <div class="skills_li"><span>C#</span><img src="/static/images/csharp.png" width="100px" height="100px" alt=""></div>
+                    <!-- <div class="skills_li"><span>DJANGO</span><img src="/static/images/django.png" width="100px" height="100px" alt=""></div> -->
+                </div>
             </div>
         </div>
     </section>
@@ -285,5 +289,7 @@
     <script src="script.js"></script>
 
 </body>
+
+</html>
 
 </html>

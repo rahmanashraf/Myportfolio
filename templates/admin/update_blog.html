@@ -1,0 +1,19 @@
+{% extends "admin/base.html" %} {% block content %}
+
+<div class="main">
+    <div class="container">
+        <form action="/blogEdit/{{newBlogs.id}}" method="POST" enctype="multipart/form-data">
+            <div class="form-group">
+                <label class="text-dark" for="exampleInputEmail1">Blog Title</label>
+                <input type="text" name="blog_title" value="{{newBlogs.blog_title}}" form-control id="exampleInputEmail1 " aria-describedby="emailHelp " placeholder="Enter Title.. ">
+            </div>
+            <div class="form-group mt-3 ">
+                <label for="exampleInputPassword1 ">Blog Content</label>
+                <input type="text " name="blog_content" value="{{newBlogs.blog_content}}" form-control placeholder="Content.. ">
+            </div>
+            <button type="submit " class="btn btn-primary mt-3 ">Submit</button>
+        </form>
+    </div>
+</div>
+
+{% endblock %}
