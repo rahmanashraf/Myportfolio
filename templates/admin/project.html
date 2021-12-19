@@ -1,0 +1,39 @@
+{% extends "admin/base.html" %} {% block content %}
+
+<div class="main">
+    <div class="container">
+        <form action="/admin/projects" method="POST" enctype="multipart/form-data">
+            <div class="form-group mt-3">
+                <label for="exampleInputPassword1">Project Name</label>
+                <input type="text" name="project_url" class="form-control" placeholder="Content..">
+            </div>
+            <div class="form-group mt-3">
+                <label for="exampleInputPassword1">Project image</label>
+                <input type="file" name="project_img" class="form-control">
+            </div>
+            <button type="submit" class="btn btn-primary mt-3" style="background-color: #252525;">Qeydə al</button>
+            <table class="table table-dark my-4">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Project Url</th>
+                        <th scope="col">Delete</th>
+                    </tr>
+                </thead>
+                <thead>
+                    {%for project in projects%}
+                    <tr>
+                        <td>{{project.id}}</td>
+                        <td>{{project.project_url}}</td>
+                        <td>
+                            <a href="/projectDelete/{{project.id}}">Delete</a>
+                        </td>
+                    </tr>
+                    {%endfor%}
+                </thead>
+            </table>
+        </form>
+    </div>
+</div>
+
+{% endblock %}

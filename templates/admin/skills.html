@@ -2,33 +2,30 @@
 
 <div class="main">
     <div class="container">
-        <form action="/admin/blog" method="POST" enctype="multipart/form-data">
+        <form action="/admin/skills" method="POST" enctype="multipart/form-data">
             <div class="form-group">
                 <label class="text-dark" for="exampleInputEmail1">Skills Name</label>
-                <input type="text" name="skills_name" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Title..">
+                <input type="text" name="skills_title" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Title..">
             </div>
             <div class="form-group mt-3">
                 <label for="exampleInputPassword1">Skills Img</label>
-                <input type="file" name="blog_img" class="form-control">
+                <input type="file" name="skills_img" class="form-control">
             </div>
-            <button type="submit" class="btn btn-primary mt-3">Submit</button>
+            <button type="submit" class="btn btn-primary mt-3" style="background-color: #252525;">Qeydə al</button>
             <table class="table table-dark my-4">
                 <thead>
                     <tr>
                         <th scope="col">#</th>
                         <th scope="col">Name</th>
-                        <th scope="col">Link</th>
-                        <!-- <th scope="col">Update</th> -->
                         <th scope="col">Delete</th>
                     </tr>
                 </thead>
                 <thead>
-                    {% for blog in blogs %}
+                    {% for skill in skills %}
                     <tr>
-                        <td>{{blog.id}}</td>
-                        <td>{{blog.blog_title}}</td>
-                        <td>{{blog.blog_content}}</td>
-                        <td><a href="/blogDelete/{{blog.id}}">Sil</a></td>
+                        <td>{{skill.id}}</td>
+                        <td>{{skill.skills_title}}</td>
+                        <td><a href="/skillsDelete/{{skill.id}}">Sil</a></td>
                     </tr>
                     {% endfor %}
                 </thead>

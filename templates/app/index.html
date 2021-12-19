@@ -32,15 +32,16 @@
                 <div class="col-6">
                     <div class="header-content">
 
-                        <h1>RAHMAN ASHRAF</h1>
+                        <h1 id="text">
+                        </h1>
                         <h2>WEB DEVELOPER</h2>
                         {% for home in homes %}
                         <p>{{home.home_content}}</p>
                         {% endfor %}
 
                         <div class="test">
-                            <button>Daha ətraflı...
-                                <i class="fas fa-arrow-right"></i>
+                            <button>More about...
+                                <a href="#aboutpage" style="color: white;"><i class="fas fa-arrow-right"></i></a>
                             </button>
                         </div>
                     </div>
@@ -117,18 +118,13 @@
     <section id="skills">
         <div class="container">
             <h1>MY SKILLS</h1>
-            <div class="skills">
-                <div class="skills_ul">
-                    <div class="skills_li"><span>HTML5</span><img src="/static/images/html5.png" width="100px" height="100px" alt=""></div>
-                    <div class="skills_li"><span>CSSS3</span><img src="/static/images/css3.png" width="100px" height="100px" alt=""></div>
-                    <div class="skills_li"><span>BOOTSTRAP</span><img src="/static/images/bootstrap.png" width="100px" height="100px" alt=""></div>
-                    <div class="skills_li"><span>JAVASCRIPT</span><img src="/static/images/javascript.png" width="100px" height="100px" alt=""></div>
-                    <div class="skills_li"><span>PYTHON</span><img src="/static/images/python.png" width="100px" height="100px" alt=""></div>
-                    <div class="skills_li"><span>FLASK</span><img src="/static/images/flask.png" width="100px" height="100px" alt=""></div>
-                    <div class="skills_li"><span>C#</span><img src="/static/images/csharp.png" width="100px" height="100px" alt=""></div>
-                    <!-- <div class="skills_li"><span>DJANGO</span><img src="/static/images/django.png" width="100px" height="100px" alt=""></div> -->
-                </div>
+            <!-- <div class="skills"> -->
+            <div class="skills_ul">
+                {% for skill in skills %}
+                <div class="skills_li"><span>{{skill.skills_title}}</span><img src="{{skill.skills_img}}" width="100px" height="100px" alt=""></div>
+                {% endfor %}
             </div>
+
         </div>
     </section>
     <!-- MY skills end -->
@@ -139,37 +135,37 @@
             <div class="row">
                 <div class="exper-items">
                     <div class="exper-item">
-                        <i class="fas fa-briefcase"></i>
+                        <i class="fas fa-graduation-cap"></i>
                         <span>2013-2017</span>
                         <h5>Bachelor</h5>
                         <p>Baku Slavic University</p>
                     </div>
                     <div class="exper-item">
-                        <i class="fas fa-briefcase"></i>
+                        <i class="far fa-star"></i>
                         <span>2017-2018</span>
                         <h5>Military</h5>
                         <p>Sniper</p>
                     </div>
                     <div class="exper-item">
-                        <i class="fas fa-briefcase"></i>
+                        <i class="fab fa-ebay"></i>
                         <span>2013-2014</span>
                         <h5>E-commerce</h5>
                         <p>Sales from Ebay</p>
                     </div>
                     <div class="exper-item">
-                        <i class="fas fa-briefcase"></i>
+                        <i class="fas fa-coffee"></i>
                         <span>2015-2016</span>
                         <h5>Restoraunt</h5>
                         <p>Director</p>
                     </div>
                     <div class="exper-item">
-                        <i class="fas fa-briefcase"></i>
+                        <i class="fas fa-file-invoice-dollar"></i>
                         <span>2019-2021</span>
                         <h5>Accountant</h5>
                         <p>Shopping center</p>
                     </div>
                     <div class="exper-item">
-                        <i class="fas fa-briefcase"></i>
+                        <i class="fas fa-lightbulb"></i>
                         <span>2021-Today</span>
                         <h5>Web-developer</h5>
                         <p>Start-14Sep21</p>
@@ -189,17 +185,12 @@
         <div class="container">
             <div class="row">
                 <div class="grid-items">
-                    <div class="col-4"><img src="../../static/images/IMG_7011.jpeg" alt=""></div>
-                    <div class="col-4"><img src="../../static/images/IMG_7052.jpeg" alt=""></div>
-                    <div class="col-4"><img src="../../static/images/IMG_7124.jpeg" alt=""></div>
-                    <div class="col-4"><img src="../../static/images/IMG_7133.jpeg" alt=""></div>
-                    <div class="col-4"><img src="../../static/images/IMG_7223.jpeg" alt=""></div>
-                    <div class="col-4"><img src="../../static/images/IMG_7686.jpeg" alt=""></div>
-                    <div class="col-4"><img src="../../static/images/IMG_7977.jpeg" alt=""></div>
-                    <div class="col-4"><img src="../../static/images/IMG_8921.jpeg" alt=""></div>
-                    <div class="col-4"><img src="../../static/images/IMG_9001.jpeg" alt=""></div>
+                    {% for project in projects%}
+                    <div class="col-4">
+                        <a href="{{project.project_url}}" target="_blank"><img src="{{project.project_img}}" alt="" width="200px" height="200px"> </a>
+                    </div>
+                    {%endfor%}
                 </div>
-
 
             </div>
         </div>
@@ -218,11 +209,13 @@
             <div class="row">
                 <div class="grid">
                     {%for blog in blogs%}
-                    <div class="card">
+                    <div class="cardsss">
                         <img width="300px" height="300px" style="object-fit: cover;" src="{{blog.blog_img}}" class="card-img-top" alt="...">
                         <div class="card-body">
-                            <h4>{{blog.blog_title}}</h4>
-                            <p class="card-text">{{blog.blog_content}}</p>
+                            <a href="{{blog.blog_url}}" style="color: #269143;" style="text-decoration: underline;">
+                                <h4>{{blog.blog_title}}</h4>
+                                <p class="card-text">{{blog.blog_content}}</p>
+                            </a>
                         </div>
                     </div>
                     {%endfor%}
@@ -238,13 +231,13 @@
         <div class="container">
             <div class="con2-all">
                 <div class="conyazi">
-                    <h1>Utancag olma!!!</h1>
-                    <p>Həyat bir səhnədir sözü nəqədər yalnış anlaşılırsa artıq bu ölkədə insanlar bu sözə o qədər inanıb ki,kiminsə haqqında fikir bildirəndə özünü tamaşaçı və tənqidçi qismində hiss edir. Fikir bildirdiyi adamı isə aktyor.</p>
+                    <h1>DON'T BE SHY !</h1>
+                    <p>Feel free to get in touch with me. I am always open to discussing new projects, creative ideas or opportunities to be part of your visions.</p>
                     <div class="mail-me"><a href="mailto: rehman199577@gmail.com"><i class="fas fa-envelope-open-text"></i></a>
-                        <h3>Mail yaz <br><span>rehman199577@gmail.com</span></h3>
+                        <h3>Mail me <br><span>rehman199577@gmail.com</span></h3>
                     </div>
                     <div class="call-me"><a href="tel:+994502015187"><i class="fas fa-phone-square-alt"></i></a>
-                        <h3>Zəng et <br><span>+994 50 2015187</span></h3>
+                        <h3>Call me <br><span>+994 50 2015187</span></h3>
                     </div>
                     <div class="conyazi-icon">
                         <a href="https://facebook.com/rehman135" target="_blank"><i class="fab fa-facebook-square"></i></a>
@@ -254,16 +247,16 @@
                     </div>
                 </div>
                 <div class="con-orta">
-                    <form action="#">
+                    <form action="admin/contact" , method="POST">
                         <div class="coninput">
-                            <input type="text" placeholder="Adınızı qeyd edin" required>
-                            <input type="text" placeholder="E-poçt ünvanınız" required>
-                            <input type="text" placeholder="Mövzu" required>
+                            <input type="text" name="contact_name" placeholder="Your name" required>
+                            <input type="text" name="contact_email" placeholder="Your e-mail" required>
+                            <input type="text" name="contact_title" placeholder="Subject" required>
                         </div>
 
                         <div class="con-text">
-                            <textarea name="" id="" cols="30" rows="10"></textarea>
-                            <div class="test"><button>Bizə Göndər<i class="fas fa-paper-plane"></i></button></a>
+                            <textarea name="contact_message" id="" cols="30" rows="10"></textarea>
+                            <div class="test"><button>Send us<i class="fas fa-paper-plane"></i></button></a>
                             </div>
                     </form>
                     </div>
@@ -286,7 +279,7 @@
     <!-- CONTACT FINISHED -->
 
 
-    <script src="script.js"></script>
+    <script src="../../static/js/task3.js"></script>
 
 </body>
 
