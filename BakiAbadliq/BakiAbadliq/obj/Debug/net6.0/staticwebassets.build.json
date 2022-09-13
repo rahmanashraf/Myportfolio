@@ -1,0 +1,54 @@
+{
+  "Version": 1,
+  "Hash": "JOauTrBPv2BoZLme2PVfhRT4mRl1UNyO3y7nY0vRbGk=",
+  "Source": "BakiAbadliq",
+  "BasePath": "_content/BakiAbadliq",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "BakiAbadliq\\wwwroot",
+      "Source": "BakiAbadliq",
+      "ContentRoot": "C:\\Users\\HP\\Desktop\\New folder\\Myportfolio\\BakiAbadliq\\BakiAbadliq\\wwwroot\\",
+      "BasePath": "_content/BakiAbadliq",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "C:\\Users\\HP\\Desktop\\New folder\\Myportfolio\\BakiAbadliq\\BakiAbadliq\\wwwroot\\css\\style.css",
+      "SourceId": "BakiAbadliq",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\HP\\Desktop\\New folder\\Myportfolio\\BakiAbadliq\\BakiAbadliq\\wwwroot\\",
+      "BasePath": "_content/BakiAbadliq",
+      "RelativePath": "css/style.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\style.css"
+    },
+    {
+      "Identity": "C:\\Users\\HP\\Desktop\\New folder\\Myportfolio\\BakiAbadliq\\BakiAbadliq\\wwwroot\\img\\logo.jpg",
+      "SourceId": "BakiAbadliq",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\HP\\Desktop\\New folder\\Myportfolio\\BakiAbadliq\\BakiAbadliq\\wwwroot\\",
+      "BasePath": "_content/BakiAbadliq",
+      "RelativePath": "img/logo.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\logo.jpg"
+    }
+  ]
+}

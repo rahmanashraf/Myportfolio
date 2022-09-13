@@ -792,6 +792,7 @@ img {
 .hero-post-slides {
     position: relative;
     z-index: 1;
+    align-items: center;
 }
 
 .single-hero-post {
